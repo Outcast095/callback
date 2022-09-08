@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import useButtonPlusHandler from "./helpers/useButtonPlusHandler";
+import useButtonMinusHandler from "./helpers/useButtonMinusHandler";
+import useLogPlusHandler from "./helpers/useLogPLusHandler";
+import useLogMinusHandler from "./helpers/useLogMinusHandler";
+
+
+
 
 function App() {
+    let number1 = 5;
+    let number2 = 10;
+
+  const { logPlusHandler } = useLogPlusHandler(number1, number2)
+  const { logMinusHandler } = useLogMinusHandler(number1, number2)
+
+
+  const { buttonPlusHandler } = useButtonPlusHandler()
+  const { buttonMinusHandler } = useButtonMinusHandler()
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <button onClick={() => buttonPlusHandler(logPlusHandler)}>+</button>
+      <button onClick={() => buttonMinusHandler(logMinusHandler)}>-</button>
     </div>
   );
 }
