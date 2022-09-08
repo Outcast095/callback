@@ -16,8 +16,8 @@ function App() {
   const { logMinusHandler } = useLogMinusHandler(number1, number2)
 
 
-  const { buttonPlusHandler } = useButtonPlusHandler()
-  const { buttonMinusHandler } = useButtonMinusHandler()
+  const { buttonPlusHandler } = useButtonPlusHandler()  /// в этой функции должна вызываться функция logPlusHandler
+  const { buttonMinusHandler } = useButtonMinusHandler()  /// в этой функции должна вызываться функция logMinusHandler
 
 
 
